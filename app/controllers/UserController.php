@@ -31,7 +31,19 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		// Get all input from user.
+        $input = Input::except('register-btn');
+        
+        // Validate the input.
+        $validation = Validator::make($input, User::$add_rules);
+
+        // Check if validation failed.
+        if($validation->fails()) {
+
+            
+        } else {
+
+        }
 	}
 
 

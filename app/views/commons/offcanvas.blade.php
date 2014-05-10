@@ -1,6 +1,6 @@
 <div class="off-canvas-wrap pagepanel " data-offcanvas>
     <div class="inner-wrap pagepanel"  >
-        <nav class="tab-bar"  style="background-color:white;color:#c40404;">
+        <nav class="tab-bar top-bar"  style="background-color:white;color:#c40404;">
             <section class="left-small">
                 <a class="left-off-canvas-toggle menu-icon" style="background-color:white;color:#c40404;" href="#">
                     <span></span>
@@ -13,16 +13,16 @@
                      </h1> 
                 </a>
             </section>
+            <section class="top-bar-section" style="background-color:white;">
+                <ul class="right" style="background-color:white;">
+                  <li class="has-form" style="background-color:white;">
+                    <a href="#" class="button" data-reveal-id="requestModal">Request</a> </li>
+                </ul>
+            </section>
         </nav>
         <aside class="left-off-canvas-menu">
             <ul class="off-canvas-list" >
                 <li><label class="brand">Ridisastir</label></li>
-                <li>
-                    <a href="#" style="color:#2ba6cb;" data-reveal-id="requestModal">
-                        Request
-                        <span class="fa fa-flag fa-fw right"></span>
-                    </a>
-                </li>
                 <li><a href="#">Something</a></li>
                 <li><a href="#">Something</a></li>
                 <li><a href="#">Something</a></li>

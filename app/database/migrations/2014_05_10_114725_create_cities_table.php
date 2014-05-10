@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserTypesTable extends Migration {
+class CreateCitiesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -13,9 +13,11 @@ class CreateUserTypesTable extends Migration {
 	public function up()
 	{
         // Create the table.
-        Schema::create('user_types', function($table) {
+        Schema::create('cities', function($table) {
             $table->increments('id');
-            $table->string('user_type', 128);
+            $table->string('city_name', 128);
+
+            // Laravel columns
             $table->timestamps();
             $table->softDeletes();
         });
@@ -28,8 +30,8 @@ class CreateUserTypesTable extends Migration {
 	 */
 	public function down()
 	{
-		// Drop table
-		Schema::drop('user_types');
+		// Drop the table
+		Schema::drop('cities');
 	}
 
 }

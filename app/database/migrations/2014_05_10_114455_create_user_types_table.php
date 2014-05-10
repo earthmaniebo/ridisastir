@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepartments extends Migration {
+class CreateUserTypesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,13 @@ class CreateDepartments extends Migration {
 	 */
 	public function up()
 	{
-		// Create the table.
-        Schema::create('departments', function($table) {
+        // Create the table.
+        Schema::create('user_types', function($table) {
             $table->increments('id');
-            $table->string('dept_name', 128);
+            $table->string('user_type', 128);
             $table->string('description', 256);
+
+            // Laravel columns
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,8 +31,8 @@ class CreateDepartments extends Migration {
 	 */
 	public function down()
 	{
-		// Drop table
-		Schema::drop('departments');
+		// Drop the table
+		Schema::drop('user_types');
 	}
 
 }

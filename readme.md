@@ -5,3 +5,5 @@ Tracking assets—both those available and those already deployed—is a critica
 ### Developers
 - Earth Maniebo
 - Leandro Parmis
+- Rowell Canlapan
+- Alexander Delos Santos

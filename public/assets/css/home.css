@@ -1,0 +1,19 @@
+body{
+}
+#masthead{
+	text-align: center;
+	padding-top: 30px;
+}
+#masthead h1{
+	font-size: 100px;
+	color: #c40404;
+	font-family:myFirstFont;
+}
+#masthead h3{
+	color: #333333;
+}
+@font-face
+{
+	font-family: myFirstFont;
+	src: url("../fonts/data-latin.ttf");
+}

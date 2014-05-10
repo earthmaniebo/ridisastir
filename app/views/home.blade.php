@@ -16,10 +16,10 @@
             <span class="fa fa-flag fa-fw"></span> 
             Request
             </button>
-            <button class="button small-11 medium-4 medium-offset-0" id="browseButton">
+            <a href="{{ URL::to('browse') }}" class="button small-11 medium-4 medium-offset-0" id="browseButton">
             Browse
             <span class="fa fa-location-arrow fa-fw"></span> 
-            </button>
+            </a>
         </div>
     </div>
 </div>

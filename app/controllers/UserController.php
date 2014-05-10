@@ -39,13 +39,11 @@ class UserController extends \BaseController {
 
         // Check if validation failed.
         if($validation->fails()) {
-
-            
+			return Redirect::to('/')->withErrors($validation)->withInput();            
         } else {
-
+        	
         }
 	}
-
 
 	/**
 	 * Display the specified resource.
@@ -94,5 +92,8 @@ class UserController extends \BaseController {
 		//
 	}
 
-
+	public function postLogin()
+	{
+		echo "ds";
+	}
 }

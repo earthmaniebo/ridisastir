@@ -1,4 +1,28 @@
 <div class="off-canvas-wrap pagepanel " data-offcanvas>
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="#">My Site</a></h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li>
+                    <a href="#">Logout</a>
+                </li>
+            </ul>
+            <!-- Left Nav Section -->
+            <ul class="left">
+                <li>
+                    <a href="#" data-reveal-id="addUserModal">Add User</a>
+                </li>
+            </ul>
+        </section>
+    </nav>
     <div class="inner-wrap pagepanel"  >
         <nav class="tab-bar"  style="background-color:white;color:#c40404;">
             <section class="left-small">
@@ -16,23 +40,21 @@
         </nav>
         <aside class="left-off-canvas-menu">
             <ul class="off-canvas-list" >
-                <li><label class="brand">Ridisastir</label></li>
+                <li><label class="brand">Departments</label></li>
                 <li>
                     <a href="#" style="color:#2ba6cb;" data-reveal-id="requestModal">
                         Request
                         <span class="fa fa-flag fa-fw right"></span>
                     </a>
                 </li>
-                <li><a href="#">Something</a></li>
-                <li><a href="#">Something</a></li>
-                <li><a href="#">Something</a></li>
-                <li><a href="#">Something</a></li>
-                <li><a href="#">Something</a></li>
+                <li><a href="#">MMDA</a></li>
+                <li><a href="#">DPWH</a></li>
             </ul>
         </aside>
         <section class="main-section pagepanel">
             @yield('content')
         </section>
-        <a class="exit-off-canvas"></a> 
+        <a class="exit-off-canvas"></a>
+        @include('commons.addUserModal')
     </div>
 </div>

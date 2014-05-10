@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="medium-12 columns" id="loginRegister">
-        <a href="#" data-reveal-id="loginModal">Login</a>
+        <a href="#" data-reveal-id="loginModal">Login</a> | <a href="#" data-reveal-id="registerModal">Register</a>
     </div>
     <div class="row pagepanel" id="masthead">
         <div id="mastbody">
@@ -78,14 +78,67 @@
                         <input type="submit" name="login-btn" value="Login" class="button small-4 small-offset-4" />
                     </div>
                 </div>
-          </div>
+            </div>
       </form>
         <a class="close-reveal-modal">&#215;</a>
     </div>
     <div id="registerModal" class="reveal-modal" data-reveal>
         <h2>Register your Department / Barangay</h2>
-        <p class="lead">Your couch. It is mine.</p>
-        <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+        {{ Form::open(array(
+            'url'    => 'user',
+            'role'   => 'form',
+            'method' => 'POST',
+            'class'  => 'form-horizontal'
+        )) }}
+            <div class="row">
+                <div class="medium-12 columns">
+                    <label>Name
+                        <input type="text" name="name" id="name" placeholder="..." />
+                    </label>
+                </div>
+                <div class="medium-12 columns">
+                    <label>City
+                        <select name="user_id">
+                            <option value="1">Makati</option>
+                            <option value="2">Manila</option>
+                            <option value="3">Quezon City</option>
+                            <option value="4">Valenzuela</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="medium-12 columns">
+                    <label>Email
+                        <input type="email" name="email" id="email" placeholder="..." />
+                    </label>
+                </div>
+                <div class="row">
+                    <div class="medium-12 columns">
+                        <div class="medium-6 columns">
+                            <div class="medium-12 columns">
+                                <label>Password
+                                    <input type="password" name="password" id="password" placeholder="...">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="medium-6 columns">
+                            <div class="medium-12 columns">
+                                <label>Confirm Password
+                                    <input type="password" name="password_confirmation" id="password_confirmation" placeholder="...">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="medium-12 columns">
+                    <label>Contact Number
+                        <input type="text" name="contact_no" id="contact_no" placeholder="..." />
+                    </label>
+                </div>
+                <div class="row">
+                    <input type="submit" name="register-btn" value="Register" class="button small-4 small-offset-4" />
+                </div>
+            </div>
+        {{ Form::close() }}
         <a class="close-reveal-modal">&#215;</a>
     </div>
 @stop

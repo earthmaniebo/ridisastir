@@ -24,7 +24,7 @@
         </section>
     </nav>
     <div class="inner-wrap pagepanel"  >
-        <nav class="tab-bar"  style="background-color:white;color:#c40404;">
+        <nav class="tab-bar top-bar"  style="background-color:white;color:#c40404;">
             <section class="left-small">
                 <a class="left-off-canvas-toggle menu-icon" style="background-color:white;color:#c40404;" href="#">
                     <span></span>
@@ -36,6 +36,12 @@
                         Ridisastir
                      </h1> 
                 </a>
+            </section>
+            <section class="top-bar-section" style="background-color:white;">
+                <ul class="right" style="background-color:white;">
+                  <li class="has-form" style="background-color:white;">
+                    <a href="#" class="button" data-reveal-id="requestModal">Request</a> </li>
+                </ul>
             </section>
         </nav>
         <aside class="left-off-canvas-menu">

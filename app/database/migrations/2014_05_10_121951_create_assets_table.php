@@ -20,7 +20,7 @@ class CreateAssetsTable extends Migration {
 			$table->integer('request_id')->unsigned()->nullable();
             $table->string('name', 128);
             $table->string('status', 128);
-            $table->string('condition', 128);
+            $table->string('a_condition', 128);
             $table->string('location', 128);
             $table->date('date_and_time');
 

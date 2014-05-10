@@ -15,19 +15,25 @@ body{
 	color: #c40404;
 }
 #maplogo{
-
+	display: none;
 }
 #masthead{
-	padding-top: 5%;
+	padding-top: 10%;
+}
+#masthead #mastbody{
+	vertical-align: middle;
+}
+#mastcontent{
+	/*padding-top: 15px;*/
+	/*position: relative;
+	top: -50%;*/
 }
 #masthead h1{
 	font-size: 70px;
 	color: #c40404;
 	font-family:myFirstFont;
 }
-#masthead #mastcontent{
-	padding-top: 15px;
-}
+
 @media only screen and (min-width: 40.063em) {
 	#masthead h1{
 		font-size: 100px;

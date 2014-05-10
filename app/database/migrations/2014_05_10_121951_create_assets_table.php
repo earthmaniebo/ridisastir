@@ -22,7 +22,6 @@ class CreateAssetsTable extends Migration {
             $table->string('status', 128);
             $table->string('a_condition', 128);
             $table->string('location', 128);
-            $table->date('date_and_time');
 
             // Foreign keys
             $table->foreign('user_id')->references('id')->on('users');

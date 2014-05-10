@@ -19,7 +19,6 @@ class CreateCitizenRequestsTable extends Migration {
             $table->string('name', 128);
             $table->string('contact_no', 20);
             $table->string('request', 128);
-            $table->date('date_and_time');
 
             // Foreign keys
             $table->foreign('user_id')->references('id')->on('users');

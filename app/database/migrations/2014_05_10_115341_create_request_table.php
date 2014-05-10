@@ -18,7 +18,6 @@ class CreateRequestTable extends Migration {
 			$table->integer('asset_id')->unsigned();
 			$table->integer('from_request_id')->unsigned();
 			$table->integer('to_request_id')->unsigned();
-            $table->date('date_and_time');
 
             // Foreign keys
             $table->foreign('from_request_id')->references('id')->on('users');

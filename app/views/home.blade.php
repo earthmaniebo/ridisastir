@@ -27,83 +27,32 @@
     @include('commons.requestmodal')
     <div id="loginModal" class="reveal-modal medium" data-reveal>
         <h2>Login</h2>
-        <form>
+        {{ Form::open(array(
+            'url'    => 'user/login',
+            'role'   => 'form',
+            'method' => 'POST',
+            'data-abide' => 'data-abide'
+        )) }}
             <div class="row">
                  <div class="medium-6 medium-offset-3 columns">   
                     <div class="medium-12 columns">
-                        <label>Email
-                            <input type="email" name="email" id="email" placeholder="..." />
+                        <label>Email <small>required</small>
+                            <input type="email" required name="login_email" id="login_email" placeholder="..." />
                         </label>
+                        <small class="error">Please enter a valid email address.</small>
                     </div>
                     <div class="medium-12 columns">
-                        <label>Password
-                            <input type="password" name="password" id="password" placeholder="..." />
+                        <label>Password <small>required</small>
+                            <input type="password" required name="login_password" id="login_password" placeholder="..." />
                         </label>
-                    </div>            
+                        <small class="error">Password is required.</small>
+                    </div>      
                     <div class="row">
                         <input type="submit" name="login-btn" value="Login" class="button small-4 small-offset-4" />
                     </div>
                 </div>
             </div>
-      </form>
-        <a class="close-reveal-modal">&#215;</a>
-    </div>
-    <div id="registerModal" class="reveal-modal" data-reveal>
-        <h2>Register your Department / Barangay</h2>
-        {{ Form::open(array(
-            'url'    => 'user',
-            'role'   => 'form',
-            'method' => 'POST'
-        )) }}
-            <div class="row">
-                <div class="medium-12 columns">
-                    <label>Name
-                        <input type="text" name="name" id="name" placeholder="..." />
-                    </label>
-                </div>
-                <div class="medium-12 columns">
-                    <label>City
-                        <select name="user_id">
-                            <option value="1">Makati</option>
-                            <option value="2">Manila</option>
-                            <option value="3">Quezon City</option>
-                            <option value="4">Valenzuela</option>
-                        </select>
-                    </label>
-                </div>
-                <div class="medium-12 columns">
-                    <label>Email
-                        <input type="email" name="email" id="email" placeholder="..." />
-                    </label>
-                </div>
-                <div class="row">
-                    <div class="medium-12 columns">
-                        <div class="medium-6 columns">
-                            <div class="medium-12 columns">
-                                <label>Password
-                                    <input type="password" name="password" id="password" placeholder="...">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="medium-6 columns">
-                            <div class="medium-12 columns">
-                                <label>Confirm Password
-                                    <input type="password" name="password_confirmation" id="password_confirmation" placeholder="...">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="medium-12 columns">
-                    <label>Contact Number
-                        <input type="text" name="contact_no" id="contact_no" placeholder="..." />
-                    </label>
-                </div>
-                <div class="row">
-                    <input type="submit" name="register-btn" value="Register" class="button small-4 small-offset-4" />
-                </div>
-            </div>
-        {{ Form::close() }}
+      {{ Form::close() }}
         <a class="close-reveal-modal">&#215;</a>
     </div>
 @stop

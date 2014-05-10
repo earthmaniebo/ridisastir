@@ -1,3 +1,11 @@
 .pagepanel{
 	height: 100%;
 }
+.brand{
+	font-family:myFirstFont;
+}
+@font-face
+{
+	font-family: myFirstFont;
+	src: url("../fonts/data-latin.ttf");
+}

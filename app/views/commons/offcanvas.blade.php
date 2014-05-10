@@ -8,7 +8,7 @@
             </section>
             <section class="middle tab-bar-section">
                 <a href="{{ URL::to('/') }}">
-                     <h1>
+                     <h1 class="brand">
                         Ridisastir
                      </h1> 
                 </a>
@@ -16,9 +16,9 @@
         </nav>
         <aside class="left-off-canvas-menu">
             <ul class="off-canvas-list">
-                <li><label>Ridisastir</label></li>
+                <li><label class="brand">Ridisastir</label></li>
                 <li>
-                    <a href="#" style="color:#2ba6cb;">
+                    <a href="#" style="color:#2ba6cb;" data-reveal-id="requestModal">
                         Request
                         <span class="fa fa-flag fa-fw right"></span>
                     </a>

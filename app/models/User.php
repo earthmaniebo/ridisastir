@@ -5,19 +5,22 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
+	// Table name
 	protected $table = 'users';
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = array('password');
+	// The attributes excluded from the model's JSON form.
+	protected $hidden = ['password'];
+
+	// Columns that are only fillable
+	protected $fillable = ['user_type_id', 'city_id', 'name', 'email', 'password', 'contact_no'];
+
+    // Prevent direct manipulation.
+    protected $guarded = ['id'];
+
+    // Validation rules for inputs.
+    public static $add_rules = array(
+        'email' => 'unique:users,email',
+    );
 
 	/**
 	 * Get the unique identifier for the user.

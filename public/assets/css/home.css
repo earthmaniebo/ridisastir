@@ -1,17 +1,31 @@
 body{
-	background-image: url("../img/ph_new.png");
-	background-repeat: no-repeat;
-	background-size: 400px;
-	background-position: left;
+	
+}
+#maplogo{
+
 }
 #masthead{
-	text-align: center;
-	padding-top: 55px;
+	padding-top: 40px;
 }
-#lowerpart{
-	margin-top: 10px;
-	text-align: center;
-	background-size: cover;
+#masthead h1{
+	font-size: 70px;
+	color: #c40404;
+	font-family:myFirstFont;
+}
+#masthead #mastcontent{
+	padding-top: 15px;
+}
+@media only screen and (min-width: 40.063em) {
+	#masthead h1{
+		font-size: 100px;
+	}
+}
+#masthead h3{
+	color: #333333;
+}
+
+.pagepanel{
+	height: 100%;
 }
 #requestButton{
 	background-color: #c40404;
@@ -39,19 +53,7 @@ body{
 	border-color: #c40404;
 	color: #fff;
 }
-#masthead h1{
-	font-size: 70px;
-	color: #c40404;
-	font-family:myFirstFont;
-}
-@media only screen and (min-width: 40.063em) {
-	#masthead h1{
-		font-size: 100px;
-	}
-}
-#masthead h3{
-	color: #333333;
-}
+
 @font-face
 {
 	font-family: myFirstFont;

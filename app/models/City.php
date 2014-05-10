@@ -2,7 +2,7 @@
 
 class City extends \Eloquent {
 
-    // Need to explicitly specify because laravel adds 's' to pluralize models
+    // Table name
     protected $table = 'cities';
 	protected $fillable = [];
 }

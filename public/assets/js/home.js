@@ -1,3 +1,3 @@
 $(document).ready(function(){
-	$('#maplogo').fadeIn(2000);
+	$('#maplogo').fadeIn(1500);
 });

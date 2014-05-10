@@ -34,11 +34,6 @@ body{
 	font-family:myFirstFont;
 }
 
-@media only screen and (min-width: 40.063em) {
-	#masthead h1{
-		font-size: 100px;
-	}
-}
 #masthead h3{
 	color: #333333;
 }
@@ -68,12 +63,16 @@ body{
 	border-width: thin;;
 	color: #c40404;
 	border-radius: 8px;
-	margin-left: 10px;
 }
 #browseButton:hover{
 	background-color: #333333;
 	border-color: #c40404;
 	color: #fff;
+}
+@media only screen and (min-width: 40.063em) {
+	#masthead h1{
+		font-size: 100px;
+	}
 }
 
 @font-face

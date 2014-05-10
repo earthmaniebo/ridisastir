@@ -22,3 +22,7 @@ Route::get('browse', function()
 {
 	return View::make('browse');
 });
+Route::get('user', function()
+{
+	return View::make('user-index');
+});

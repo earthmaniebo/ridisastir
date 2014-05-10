@@ -12,7 +12,7 @@
 <script src="assets/js/vendor/modernizr.js"></script>
 </head>
 <body>
-    @yield('content')
+	@include('../commons/user-offcanvas')
 
 <script src="assets/js/vendor/jquery.js"></script>
 <script src="assets/js/foundation.min.js"></script>

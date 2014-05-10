@@ -1,4 +1,4 @@
-@extends('layouts.map')
+@extends('layouts.map-layout')
 
 @section('content')
     <p>This is my body content.</p>

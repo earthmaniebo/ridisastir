@@ -1,13 +1,53 @@
 body{
+	background-image: url("../img/ph_new.png");
+	background-repeat: no-repeat;
+	background-size: 400px;
+	background-position: left;
 }
 #masthead{
 	text-align: center;
-	padding-top: 30px;
+	padding-top: 55px;
+}
+#lowerpart{
+	margin-top: 10px;
+	text-align: center;
+	background-size: cover;
+}
+#requestButton{
+	background-color: #c40404;
+	border-color: #c40404;
+	border-radius: 8px;
+}
+#requestButton:hover{
+	background-color: #fff;
+	border-color: #c40404;
+	border-style: solid;
+	border-width: thin;;
+	color: #c40404;
+}
+#browseButton{
+	background-color: #fff;
+	border-color: #c40404;
+	border-style: solid;
+	border-width: thin;;
+	color: #c40404;
+	border-radius: 8px;
+	margin-left: 10px;
+}
+#browseButton:hover{
+	background-color: #333333;
+	border-color: #c40404;
+	color: #fff;
 }
 #masthead h1{
-	font-size: 100px;
+	font-size: 70px;
 	color: #c40404;
 	font-family:myFirstFont;
+}
+@media only screen and (min-width: 40.063em) {
+	#masthead h1{
+		font-size: 100px;
+	}
 }
 #masthead h3{
 	color: #333333;

@@ -15,3 +15,7 @@ Route::get('/', function()
 {
 	return View::make('home');
 });
+Route::get('map', function()
+{
+	return View::make('map');
+});

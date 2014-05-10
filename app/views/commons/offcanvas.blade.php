@@ -5,6 +5,14 @@
             <section class="middle tab-bar-section">
                 <h1 class="title">Foundation</h1>
             </section>
+            <section class="top-bar-section">
+            
+            <ul class="right">
+              <li class="has-form">
+                <a href="http://foundation.zurb.com/docs" class="button">Get Lucky</a>
+              </li>
+            </ul>
+          </section>
         </nav>
         <aside class="left-off-canvas-menu">
             <ul class="off-canvas-list">

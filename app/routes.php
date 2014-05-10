@@ -17,7 +17,7 @@ Route::get('/', function()
 {
 	return View::make('home');
 });
-Route::get('map', function()
+Route::get('browse', function()
 {
-	return View::make('map');
+	return View::make('browse');
 });

@@ -3879,7 +3879,7 @@ dialog[open] {
     line-height: 1;
     top: 0.9375rem;
     left: 0.90625rem;
-    box-shadow: 0 0px 0 1px white, 0 7px 0 1px white, 0 14px 0 1px white; }
+    box-shadow: 0 0px 0 1px #c40404, 0 7px 0 1px #c40404, 0 14px 0 1px #c40404; }
   .tab-bar .menu-icon:hover span {
     box-shadow: 0 0px 0 1px #b3b3b3, 0 7px 0 1px #b3b3b3, 0 14px 0 1px #b3b3b3; }
 

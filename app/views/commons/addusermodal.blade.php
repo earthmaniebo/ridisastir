@@ -18,7 +18,7 @@
                     <select name="user_id">
                         @foreach($cities as $city)
                             <option value="{{$city['id']}}">
-                                {{ $city["city"]) }}
+                                {{ $city["city_name"] }}
                             </option>
                         @endforeach
                     </select>

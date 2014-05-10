@@ -20,7 +20,8 @@ Route::get('/', function()
 });
 Route::get('browse', function()
 {
-	return View::make('browse');
+    $cities = City::all();
+	return View::make('browse', compact('cities'));
 });
 Route::get('user', function()
 {

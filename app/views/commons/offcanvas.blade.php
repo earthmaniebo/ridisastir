@@ -47,12 +47,6 @@
         <aside class="left-off-canvas-menu">
             <ul class="off-canvas-list" >
                 <li><label class="brand">Departments</label></li>
-                <li>
-                    <a href="#" style="color:#2ba6cb;" data-reveal-id="requestModal">
-                        Request
-                        <span class="fa fa-flag fa-fw right"></span>
-                    </a>
-                </li>
                 <li><a href="#">MMDA</a></li>
                 <li><a href="#">DPWH</a></li>
             </ul>

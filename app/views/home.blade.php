@@ -84,8 +84,7 @@
         {{ Form::open(array(
             'url'    => 'user',
             'role'   => 'form',
-            'method' => 'POST',
-            'class'  => 'form-horizontal'
+            'method' => 'POST'
         )) }}
             <div class="row">
                 <div class="medium-12 columns">

@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="medium-12 columns" id="loginRegister">
-    @if(!Session::has('id'))<a href="#" data-reveal-id="loginModal">Login</a>@endif
+    @if(!Session::has('name'))<a href="#" data-reveal-id="loginModal">Login</a>@endif
 </div>
 <div class="row pagepanel" id="masthead">
     <div id="mastbody">

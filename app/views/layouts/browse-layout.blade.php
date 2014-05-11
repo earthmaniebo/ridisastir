@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/foundation.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/browse.css') }}">
-	<script src="assets/js/vendor/modernizr.js"></script> 
+	<script src="{{ asset('assets/js/vendor/modernizr.js') }}"></script> 
 </head>
 <body style="background:#333333;">
 	@include('../commons/offcanvas')

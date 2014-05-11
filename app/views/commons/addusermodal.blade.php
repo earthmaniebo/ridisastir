@@ -1,7 +1,7 @@
 <div id="addUserModal" class="reveal-modal" data-reveal>
     <h3>Add your Department / Barangay</h3>
     {{ Form::open(array(
-        'url'    => 'user',
+        'url'    => 'user/add',
         'role'   => 'form',
         'method' => 'POST',
         'data-abide' => 'data-abide'
@@ -14,8 +14,19 @@
                 <small class="error">Name is required.</small>
             </div>
             <div class="medium-12 columns">
+                <label>User Type <small>required</small>
+                    <select name="user_type_id">
+                        @foreach($user_types as $user_type)
+                            <option value="{{$user_type['id']}}">
+                                {{ $user_type["user_type"] }}
+                            </option>
+                        @endforeach
+                    </select>
+                </label>
+            </div>
+            <div class="medium-12 columns">
                 <label>City <small>required</small>
-                    <select name="user_id">
+                    <select name="city_id">
                         @foreach($cities as $city)
                             <option value="{{$city['id']}}">
                                 {{ $city["city_name"] }}

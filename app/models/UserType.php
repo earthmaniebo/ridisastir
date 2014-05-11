@@ -11,4 +11,5 @@ class UserType extends \Eloquent {
     // Prevent direct manipulation.
     protected $guarded = ['id'];
 
+    protected $softDelete = true;
 }

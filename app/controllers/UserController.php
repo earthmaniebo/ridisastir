@@ -1,35 +1,17 @@
 <?php
 
 class UserController extends \BaseController {
+	
+	public function __construct() {
+        $this->beforeFilter('csrf', array('on'=>'post'));
+    }
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{
 		//
 	}
 
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+	public function postAdd()
 	{
 		// Get all input from user.
         $input = Input::except('register-btn');
@@ -41,59 +23,51 @@ class UserController extends \BaseController {
         if($validation->fails()) {
 			return Redirect::to('/')->withErrors($validation)->withInput();            
         } else {
-        	
+        	// In the User model.
+            $user = new User;
+            $date = new DateTime();
+
+            $user->user_type_id = (int)$input['user_type_id'];
+            $user->city_id	    = (int)$input['city_id'];
+            $user->name    		= $input['name'];
+            $user->email 	    = $input['email'];
+            $user->password     = Hash::make($input['password']);
+            $user->contact_no   = $input['contact_no'];
+
+            $user->created_at   = $date->getTimestamp();
+            $user->updated_at   = $date->getTimestamp();
+            $user->save();
+
+            return Redirect::to('browse')->with('success', 'A new user was added!');
         }
-	}
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
 	}
 
 	public function postLogin()
 	{
-		echo "ds";
+		$credentials = Input::except('login-btn');
+        if (Auth::attempt(array(
+            'email' => $credentials['login_email'], 
+            'password' => $credentials['login_password']
+        ))) {
+            $login_user = User::join('user_types', 'users.user_type_id', '=', 'user_types.id')->join('cities', 'users.city_id', '=', 'cities.id')->select('users.id', 'city_id', 'city_name', 'name', 'email', 'user_type', 'contact_no', 'user_type_id')->where("email", "=", $credentials['login_email'])->get();
+
+            foreach ($login_user as $user) {
+                Session::put('user_id', $user["id"]);
+                Session::put('email', $user["email"]);
+                Session::put('name', $user["name"]);
+                Session::put('city_name', $user["city_name"]);
+                Session::put('user_type', $user["user_type"]);
+            }
+            return Redirect::to('browse/');
+        } else {
+            return Redirect::to('/');
+        }
+	}
+
+	public function postLogout()
+	{
+		Auth::logout();
+        Session::flush();
+        return Redirect::to('/');
 	}
 }

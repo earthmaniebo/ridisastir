@@ -10,4 +10,6 @@ class City extends \Eloquent {
 
     // Prevent direct manipulation.
     protected $guarded = ['id'];
+
+    protected $softDelete = true;
 }

@@ -10,5 +10,6 @@ class Request extends \Eloquent {
 
     // Prevent direct manipulation.
     protected $guarded = ['id'];
-	
+
+    protected $softDelete = true;	
 }

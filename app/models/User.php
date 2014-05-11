@@ -17,6 +17,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     // Prevent direct manipulation.
     protected $guarded = ['id'];
 
+    protected $softDelete = true;
+    
     // Validation rules for inputs.
     public static $add_rules = array(
         'email' => 'unique:users,email',

@@ -10,4 +10,11 @@ class Asset extends \Eloquent {
 
     // Prevent direct manipulation.
     protected $guarded = ['id'];
+
+    protected $softDelete = true;
+
+    // Validation rules for inputs.
+    public static $add_rules = array(
+        'sku' => 'unique:assets,sku',
+    );
 }

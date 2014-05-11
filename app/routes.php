@@ -11,8 +11,9 @@
 |
 */
 
-Route::resource('user', 'UserController');
 Route::controller('user', 'UserController');
+Route::controller('asset', 'AssetController');
+Route::controller('request', 'RequestController');
 
 Route::get('/', function()
 {
@@ -20,6 +21,8 @@ Route::get('/', function()
 });
 Route::get('browse', function()
 {
+    $depts = User::where("user_type_id", "=", '2')->get();
     $cities = City::all();
-	return View::make('browse', compact('cities'));
+    $user_types = UserType::all();
+	return View::make('browse', compact('cities', 'user_types', 'depts'));
 });

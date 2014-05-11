@@ -33,7 +33,7 @@
                 @if(Session::has('user_type'))
                     <ul class="right" style="background-color:white;">
                         <li class="has-form" style="background-color:white;">
-                            <a href="#" class="button" data-reveal-id="requestModal">View Requests</a>
+                            <a href="#" class="button" data-reveal-id="viewRequestModal">View Requests</a>
                         </li>
                     </ul>
                 @endif
@@ -69,7 +69,8 @@
             <ul class="off-canvas-list" >
                 <li><label class="brand">Departments</label></li>
                 @foreach($depts as $dept)
-                    <li><a href="#">{{ $dept["name"] }}</a></li>
+                    {{-- */$url= "user/" . $dept["name"];/* --}}
+                    <li><a href="{{url($url)}}">{{ $dept["name"] }}</a></li>
                 @endforeach
             </ul>
         </aside>
@@ -80,5 +81,7 @@
         @include('commons.addUserModal')
         @include('commons.loginmodal')
         @include('commons.addassetmodal')
+        @include('commons.viewrequestmodal')
+
     </div>
 </div>

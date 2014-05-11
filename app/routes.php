@@ -10,19 +10,25 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
+Route::get("user/{name}", "UserController@display");
 Route::controller('user', 'UserController');
 Route::controller('asset', 'AssetController');
 Route::controller('request', 'RequestController');
 
 Route::get('/', function()
 {
-	return View::make('home');
+    $barangays = User::where("user_type_id", "=", '3')->get();
+	return View::make('home', compact('barangays'));
 });
+
+
 Route::get('browse', function()
 {
-    $depts = User::where("user_type_id", "=", '2')->get();
     $cities = City::all();
     $user_types = UserType::all();
-	return View::make('browse', compact('cities', 'user_types', 'depts'));
+    $depts = User::where("user_type_id", "=", '2')->get();
+    $barangays = User::where("user_type_id", "=", '3')->get();
+    $citizens = CitizenRequest::where("user_id", "=", Session::get('user_id'))->get();
+
+	return View::make('browse', compact('cities', 'user_types', 'depts', 'barangays', 'citizens'));
 });

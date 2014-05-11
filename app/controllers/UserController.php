@@ -70,4 +70,23 @@ class UserController extends \BaseController {
         Session::flush();
         return Redirect::to('/');
 	}
+
+    public function display($name)
+    {
+        $userid = "";
+        $user = User::select('id', 'city_id', 'name', 'email', 'contact_no', 'user_type_id')->where("name", "=", $name)->get();
+        
+        foreach ($user as $user) {
+            $userid = $user['id'];
+        }
+
+        $cities = City::all();
+        $user_types = UserType::all();
+        $depts = User::where("user_type_id", "=", '2')->get();
+        $barangays = User::where("user_type_id", "=", '3')->get();
+        $citizens = CitizenRequest::where("user_id", "=", Session::get('user_id'))->get();
+
+        $assets = Asset::where("user_id", "=", $userid)->get();
+        return View::make('user.display', compact('cities', 'user_types', 'depts', 'barangays', 'citizens', 'assets', 'name'));
+    }
 }

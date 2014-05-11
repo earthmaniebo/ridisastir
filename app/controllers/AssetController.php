@@ -19,7 +19,7 @@ class AssetController extends \BaseController {
         if($validation->fails()) {
 			return Redirect::to('browse/')->withErrors($validation)->withInput();            
         } else {
-        	// In the User model.
+        	// In the Asset model.
             $asset = new Asset;
             $date = new DateTime();
 
@@ -35,7 +35,7 @@ class AssetController extends \BaseController {
             $asset->updated_at   = $date->getTimestamp();
             $asset->save();
 
-            return Redirect::to('browse')->with('success', 'A new user was added!');
+            return Redirect::to('browse')->with('success', 'A new asset was added!');
         }
 	}
 }

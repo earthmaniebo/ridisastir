@@ -63,7 +63,6 @@
                         </li>
                     </ul>
                 @endif
-            </section>
         </nav>
         <aside class="left-off-canvas-menu">
             <ul class="off-canvas-list" >

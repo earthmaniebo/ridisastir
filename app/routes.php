@@ -32,3 +32,7 @@ Route::get('browse', function()
 
 	return View::make('browse', compact('cities', 'user_types', 'depts', 'barangays', 'citizens'));
 });
+Route::get('user', function()
+{
+	return View::make('user-index');
+});

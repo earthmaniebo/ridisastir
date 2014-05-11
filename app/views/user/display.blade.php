@@ -1,10 +1,9 @@
-@extends('layouts.master')
+@extends('layouts.browse-layout')
 @section('content')
     <br>
     <div class="row">
-    <h3>{{$name}} - Assets</h3>
-
-        <div class="medium-12 columns">
+    <h3><font color="white"><h3>{{ $name }} - Assets</font></h3>
+        <div class="medium-12 columns"> 
             <table class="medium-12 columns">
                 <thead>
                     <tr>
@@ -13,7 +12,8 @@
                         <th>Status</th>
                         <th>Condition</th>
                         <th>Location</th>
-                        <th>Date Added</th>
+                        <th>Date of Request</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,6 +25,7 @@
                             <td>{{ $asset["a_condition"] }}</td>
                             <td>{{ $asset["location"] }}</td>
                             <td>{{ $asset["created_at"] }}</td>
+                            <td><button class="button tiny">Request</button></td>
                         </tr>
                     @endforeach
                 </tbody>

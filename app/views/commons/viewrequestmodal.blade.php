@@ -9,6 +9,7 @@
                         <th>Request</th>
                         <th>Contact Number</th>
                         <th>Date of Request</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,6 +20,7 @@
                             <td>{{ $citizen["request"] }}</td>
                             <td>{{ $citizen["contact_no"] }}</td>
                             <td>{{ $citizen["created_at"] }}</td>
+                            <td><button class="button tiny">Approve</button>&nbsp;<button class="button tiny alert">Deny</button></td>
                         </tr>
                     @endforeach
                 </tbody>
